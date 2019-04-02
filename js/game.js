@@ -1,0 +1,5 @@
+function game()
+{
+  createPlanets()
+  createPlayers()
+}
