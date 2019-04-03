@@ -30,12 +30,12 @@
     <canvas id="board"></canvas>
   
     <aside id="aside">
-      <div id="turn">TURN: 0</div>
+      <div id="turn"></div>
       <div class="asidebox" id="planetbox">
         <div class="planetbox" id="frombox">
             <div id="from">From: </div>
             <div id="fromowner">Owner: </div>
-            <div id="fromdimension">Dimension: </div>
+            <div id="fromdimension">Dimensions: </div>
             <div id="fromprog">Progress: </div>
             <div id="fromdistr">Distruction: </div>
         </div>
@@ -46,14 +46,14 @@
             <div id="toprog">Progress: </div>
             <div id="todistr">Distruction: </div>
         </div>
-        <div class="planetbox" id="distance">Distance: </div>
+        <div class="planetbox" id="distance"></div>
       </div>
       <div class="asidebox" id="attackbox">
         <div id="shipsnumber">0</div>
         <input type="number" name="ships" id="ships" placeholder="Ships">
-        <button id="attack"></button>
+        <button id="send">Send</button>
       </div>
-      <button id="next-turn">NEXT TURN</button>
+      <button id="nextturn">NEXT TURN</button>
       <div id="displayplayer">
         <div class="pbox" id="p1">1</div>
         <div class="pbox" id="p2">2</div>
@@ -77,6 +77,8 @@
   <script src="./js/ship.js"></script>
   <script src="./js/planet.js"></script>
   <script src="./js/player.js"></script>
+  <script src="./js/click.js"></script>
+  <script src="./js/turn.js"></script>
   <script src="./js/drawboard.js"></script>
   <script src="./js/draweverything.js"></script>
 </body>

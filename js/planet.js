@@ -33,17 +33,28 @@ class Planet
     }
   }
 
+  sendEnforce(shipsNumber)
+  {
+    if (shipsNumber <= 0) return 1;
+    if (shipsNumber > this.ships.length) {alert("Not Enough Ships"); return 1;}
+    let enforcingShips = [];
+    for (var i = 0; i <= shipsNumber; i++)
+    {
+      enforcingShips.push(this.ships.pop());
+    }
+  }
+
   receiveAttack()
   {
 
   }
 }
 
-let planetsName = ["Proxima Centauri B", "Gliese 667", "Kepler 442", "Wolf 1061 C", "Kapteyn B",
+let planetsName = ["P. Centauri B", "Gliese 667", "Kepler 442", "Wolf 1061 C", "Kapteyn B",
  "Luyten", "Trappist 1D", "LSH 1140", "Tau Ceti E", "Ross 128", "Abeir-Toril", "Acheron", "Arda",
   "Arrakis", "Caprica", "Czarnia", "Cybertron", "Eroticon 6", "Fury 161", "Giedi Prime", "Helion Prime",
-   "Klendathu", "LV-233", "Magrathea", "Nibiru", "Oddworld", "Omicron Persei 8", "Proteus", "Rigel IV",
-    "Sakaar", "Soror", "Trantor", "Ursa Minor Beta", "Vegeta", "Yuggoth"];
+   "Klendathu", "LV-233", "Magrathea", "Nibiru", "Oddworld", "Omicron X6 8", "Proteus", "Rigel IV",
+    "Sakaar", "Soror", "Trantor", "Ursa Minor", "Vegeta", "Yuggoth"];
 
 let planets = [];
 
