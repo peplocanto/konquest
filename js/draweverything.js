@@ -5,5 +5,6 @@ function drawEverything()
     ctx.clearRect(0, 0, w, h);
     drawBoard();
     drawPlanet();
+    drawBorder()
   }
 }

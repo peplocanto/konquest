@@ -41,5 +41,6 @@ function resetBoxes()
   document.querySelector("#ships").value = ""
 
   document.querySelector("#distance").innerHTML = `Distance: `
-}
 
+  borderArray.splice(0)
+}
