@@ -6,9 +6,9 @@ class Planet
     this.pic = new Image();
     this.position = {x: randomIntFromInterval(0, 9), y: randomIntFromInterval(0, 9)};
     this.dimension = randomIntFromInterval(10, 20);
-    this.distruction = 1;
-    this.progress = 1;
-    this.planetPower = this.dimension * this.distruction * this.progress;
+    this.distruction = 0;
+    this.progress = 0;
+    this.planetPower = Math.round(this.dimension * ((100 - this.distruction) / 100) * ((100 + this.progress) / 100));
     this.ships = [];
     this.color = `rgba(255, 255, 255, 0.3)`
     this.owner = "free"
@@ -21,40 +21,13 @@ class Planet
       this.ships.push(new Ship());
     }
   }
-
-  sendAttack(shipsNumber)
-  {
-    if (shipsNumber <= 0) return 1;
-    if (shipsNumber > this.ships.length) {alert("Not Enough Ships"); return 1;}
-    let attackingShips = [];
-    for (var i = 0; i <= shipsNumber; i++)
-    {
-      attackingShips.push(this.ships.pop());
-    }
-  }
-
-  sendEnforce(shipsNumber)
-  {
-    if (shipsNumber <= 0) return 1;
-    if (shipsNumber > this.ships.length) {alert("Not Enough Ships"); return 1;}
-    let enforcingShips = [];
-    for (var i = 0; i <= shipsNumber; i++)
-    {
-      enforcingShips.push(this.ships.pop());
-    }
-  }
-
-  receiveAttack()
-  {
-
-  }
 }
 
-let planetsName = ["P. Centauri B", "Gliese 667", "Kepler 442", "Wolf 1061 C", "Kapteyn B",
- "Luyten", "Trappist 1D", "LSH 1140", "Tau Ceti E", "Ross 128", "Abeir-Toril", "Acheron", "Arda",
-  "Arrakis", "Caprica", "Czarnia", "Cybertron", "Eroticon 6", "Fury 161", "Giedi Prime", "Helion Prime",
-   "Klendathu", "LV-233", "Magrathea", "Nibiru", "Oddworld", "Omicron X6 8", "Proteus", "Rigel IV",
-    "Sakaar", "Soror", "Trantor", "Ursa Minor", "Vegeta", "Yuggoth"];
+let planetsName = ["P.Centauri", "Gliese667", "Kepler442", "Wolf1061C", "KapteynB",
+ "Luyten", "Trappist1D", "LSH1140", "TauCetiE", "Ross128", "Abeir-Toril", "Acheron", "Arda",
+  "Arrakis", "Caprica", "Czarnia", "Cybertron", "Eroticon6", "Fury161", "GiediPrime", "HelionPrime",
+   "Klendathu", "LV-233", "Magrathea", "Nibiru", "Oddworld", "OmicronXSei8", "Proteus", "RigelIV",
+    "Sakaar", "Soror", "Trantor", "UrsaMinor", "Vegeta", "Yuggoth"];
 
 let planets = [];
 

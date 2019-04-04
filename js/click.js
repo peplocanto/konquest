@@ -17,8 +17,8 @@ function isPlanet()
             document.querySelector("#from").innerHTML = `From: ${planet.name}`;
             document.querySelector("#fromowner").innerHTML = `Owner: ${planet.owner}`;
             document.querySelector("#fromdimension").innerHTML = `Dimensions: ${planet.dimension}`;
-            document.querySelector("#fromprog").innerHTML = `Progress: ${planet.progress}`;
-            document.querySelector("#fromdistr").innerHTML = `Distruction: ${planet.distruction}`;
+            document.querySelector("#fromprog").innerHTML = `Progress: ${planet.progress}%`;
+            document.querySelector("#fromdistr").innerHTML = `Distruction: ${planet.distruction}%`;
 
             document.querySelector("#to").innerHTML = `To: `;
             document.querySelector("#toowner").innerHTML = `Owner: `;
@@ -27,6 +27,12 @@ function isPlanet()
             document.querySelector("#todistr").innerHTML = `Distruction: `;
 
             document.querySelector("#distance").innerHTML = `Distance: `
+
+            let fromVal = document.querySelector("#from").innerHTML.split(" ")[1]            
+            let playerActive = players[findWithAttr(players, "active", true)]
+            let fromPlanet = planets[findWithAttr(planets, "name", fromVal)]
+            if(playerActive.name === fromPlanet.owner)
+            {document.querySelector("#shipsnumber").innerHTML = fromPlanet.ships.length - 1}
             
             counter++ 
           }
@@ -44,9 +50,14 @@ function isPlanet()
             document.querySelector("#to").innerHTML = `To: ${planet.name}`;
             document.querySelector("#toowner").innerHTML = `Owner: ${planet.owner}`;
             document.querySelector("#todimension").innerHTML = `Dimensions: ${planet.dimension}`;
-            document.querySelector("#toprog").innerHTML = `Progress: ${planet.progress}`;
-            document.querySelector("#todistr").innerHTML = `Distruction: ${planet.distruction}`;
+            document.querySelector("#toprog").innerHTML = `Progress: ${planet.progress}%`;
+            document.querySelector("#todistr").innerHTML = `Distruction: ${planet.distruction}%`;
+
+            let toVal = document.querySelector("#to").innerHTML.split(" ")[1]
+            let fromVal = document.querySelector("#from").innerHTML.split(" ")[1]           
             
+            if(fromVal === toVal){resetBoxes()}
+                        
             distance = Math.round((Math.sqrt(Math.pow((clk1.x - clk2.x), 2) + Math.pow((clk1.y - clk2.y), 2))) / squareLength)
             document.querySelector("#distance").innerHTML = `Distance: ${distance}`
             
@@ -55,6 +66,4 @@ function isPlanet()
         })
     }
   })
-
-
 }
