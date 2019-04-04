@@ -1,6 +1,6 @@
 let w, h, w2, h2, squareLength;
 
-function setup(canvas, aside) {
+function setup(canvas, aside, start) {
     function setCanvasDimensions() {
         canvas.setAttribute("height", window.innerHeight * 0.98)
         canvas.setAttribute("width", window.innerHeight * 0.98)
@@ -9,6 +9,11 @@ function setup(canvas, aside) {
       aside.setAttribute("height", window.innerHeight)
       aside.setAttribute("width", (window.innerWidth - window.innerHeight))
     }
+
+    function setStartDimensions() {
+        start.setAttribute("height", window.innerHeight)
+        start.setAttribute("width", window.innerWidth)
+      }
 
     window.onresize = function () {
         w = window.innerHeight * 0.98
@@ -19,6 +24,7 @@ function setup(canvas, aside) {
 
         setCanvasDimensions()
         setAsideDimensions()
+        setStartDimensions()
         drawEverything()
     }
 
@@ -30,5 +36,6 @@ function setup(canvas, aside) {
 
     setCanvasDimensions()
     setAsideDimensions()
+    setStartDimensions()
     drawEverything()
 }

@@ -19,31 +19,35 @@ body
 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: transparent;
 }
 
-#player, #cpu, #planets
+#player, #planets
 {
-  height: 3rem;
-  width: 40rem;
-  margin-bottom: 3rem;  
+  height: 6vh;
+  width: 20%;
+  margin-bottom: 3vh;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
 }
 
 #logo
 {
-  width: 50rem;
+  width: 50%;
   height: auto;
-  margin: 5rem 0;
+  margin: 10vh 0;
 }
 
 #start
 {
-  width: 12rem;
-  height: 6rem;
-  margin-top: 2rem;
+  width: 20%;
+  height: 6vh;
+  margin-top: 2vh;
   font-family: monospace;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
 }
 
 #container
