@@ -39,6 +39,11 @@ function nextTurn()
   {
     planets.map(planet => {planet.progress++})
   }
+  if (turn % 15 === 0)
+  {
+    createTurnArray(15)
+  }
+  checkVictory(turn)
 }
 
 let turnArray = [];

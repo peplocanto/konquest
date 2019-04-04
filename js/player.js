@@ -6,6 +6,7 @@ class Player
     this.color = `rgba(${randomIntFromInterval(30, 200)},
      ${randomIntFromInterval(30, 200)}, ${randomIntFromInterval(30, 200)}, 0.5)`;
     this.active = false;
+    this.ownedPlanets = 1;
   }
 }
 

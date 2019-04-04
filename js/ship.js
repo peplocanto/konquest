@@ -106,6 +106,16 @@ function send(playerIndex, planetIndex, shipsNumber)
 
     if (sendShips.length > 0)
     {
+      players = players.map(player => 
+        {
+          if(player.name === planets[planetIndex].owner){
+            player.ownedPlanets -= 1;
+            return player
+          }
+          return player;
+        }
+        );
+      players[playerIndex].ownedPlanets +=1;
       planets[planetIndex].owner = players[playerIndex].name
       planets[planetIndex].color = players[playerIndex].color
       planets[planetIndex].ships = planets[planetIndex].ships.concat(sendShips)

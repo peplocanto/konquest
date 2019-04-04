@@ -2,7 +2,7 @@ function game()
 {
   createPlanets()
   createPlayers()
-  createTurnArray(100)
+  createTurnArray(30)
   setTurn()
   isPlanet()
 }
