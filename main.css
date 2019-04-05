@@ -50,6 +50,14 @@ body
   border: none;
 }
 
+#start-page>a
+{
+  text-decoration: none;
+  color: white;
+  font-size: 2vh;
+  margin: 2vh;
+}
+
 #container
 {
   display: none;
